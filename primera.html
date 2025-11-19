@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Mia Aitana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* RESET Y BASE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ffdde1; /* Rosa suave de fondo */
+            background-image: radial-gradient(#ffffff 15%, transparent 16%), radial-gradient(#ffffff 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /* TARJETA PRINCIPAL */
+        .card {
+            background-color: #fffdf5; /* Un crema muy suave */
+            width: 90%;
+            max-width: 400px;
+            border-radius: 25px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(212, 56, 86, 0.2);
+            border: 2px solid #ffe0e6;
+            position: relative;
+            overflow: hidden; /* Para que las decoraciones no se salgan */
+        }
+
+        /* DECORACIONES (FRESAS EN LAS ESQUINAS) */
+        .decor {
+            position: absolute;
+            width: 80px;
+            pointer-events: none;
+        }
+        .top-left { top: -10px; left: -10px; transform: rotate(-20deg); }
+        .top-right { top: -10px; right: -10px; transform: rotate(20deg); }
+        .bottom-left { bottom: 10px; left: 10px; width: 40px; }
+        .bottom-right { bottom: 10px; right: 10px; width: 40px; }
+
+        /* LOGO */
+        .logo {
+            width: 140px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        /* NOMBRE DE LA NIÑA */
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            color: #e91e63; /* Rosa fuerte/Rojo fresa */
+            font-size: 3.5rem;
+            margin: 10px 0;
+            text-shadow: 2px 2px 0px #ffccd5;
+            line-height: 1.1;
+        }
+
+        /* TEXTO DE INVITACIÓN */
+        .intro-text {
+            color: #757575;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .date-details {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        /* BOTÓN */
+        .btn-container {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff8ba7, #ffc6c7);
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+            display: inline-block;
+            transition: transform 0.2s;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: linear-gradient(45deg, #ff7597, #ffb6b7);
+        }
+
+        .click-text {
+            display: block;
+            margin-top: 15px;
+            color: #999;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        /* MARCA DE AGUA PEQUEÑA */
+        .watermark {
+            position: absolute;
+            bottom: 5px;
+            right: 50%;
+            transform: translateX(50%);
+            font-size: 0.6rem;
+            color: #ebdce0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="decor top-left" style="font-size:50px;">🌿🍓</div>
+        <div class="decor top-right" style="font-size:50px;">🍓🌿</div>
+        
+        <img src="logo.png" alt="Logo" class="logo">
+
+        <h1>Mia Aitana</h1>
+        
+        <p class="intro-text">
+            Tenemos el honor de invitarte a celebrar con nosotros <br>
+            en este día tan especial <br>
+            el primer año de nuestra hija
+        </p>
+
+        <div class="btn-container">
+            <a href="index.html" class="btn">
+                💌 VER INVITACIÓN
+            </a>
+            <span class="click-text">¡DALE CLIC!</span>
+        </div>
+
+        <div style="margin-top: 20px; font-size: 24px;">
+            🍓 &nbsp; ❤️ &nbsp; 🍓
+        </div>
+
+    </div>
+
+</body>
+</html>
