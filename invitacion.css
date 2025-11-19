@@ -1,0 +1,440 @@
+/* invitacion.css */
+
+/* --- GENERAL & RESET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: #4a4a4a;
+    background-color: #ffeff1; /* Fondo muy suave rosado */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="25" cy="25" r="5" fill="%23ffd5d9"/><circle cx="75" cy="75" r="5" fill="%23ffd5d9"/><circle cx="75" cy="25" r="5" fill="%23ffd5d9"/><circle cx="25" cy="75" r="5" fill="%23ffd5d9"/></svg>'); /* Pequeños puntos decorativos */
+    background-size: 50px 50px;
+}
+
+/* --- CONTENEDOR PRINCIPAL DE LA INVITACIÓN --- */
+.invitation-container {
+    background-color: #fffafb; /* Blanco crema para el fondo de la tarjeta */
+    width: 100%;
+    max-width: 450px; /* Ancho máximo para que se vea bien en desktop */
+    border-radius: 35px;
+    box-shadow: 0 15px 35px rgba(230, 80, 110, 0.25);
+    padding: 30px 25px;
+    position: relative;
+    overflow: hidden; /* Oculta decoraciones que se salgan */
+    border: 3px solid #ffcbd4; /* Borde más definido */
+    animation: fadeIn 1s ease-out; /* Animación de entrada */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- DECORACIONES DE FONDO (FRESAS, HOJAS) --- */
+.bg-decoration {
+    position: absolute;
+    width: 100px; /* Tamaño de la imagen de decoración */
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 0; /* Asegura que estén detrás del contenido */
+}
+
+/* Puedes usar imágenes específicas para cada esquina, o un patrón */
+.top-left {
+    top: -20px;
+    left: -20px;
+    background-image: url('https://i.imgur.com/example_strawberry_corner_left.png'); /* Reemplaza con tu imagen de fresas/hojas */
+    transform: rotate(-15deg);
+}
+.top-right {
+    top: -20px;
+    right: -20px;
+    background-image: url('https://i.imgur.com/example_strawberry_corner_right.png'); /* Reemplaza con tu imagen de fresas/hojas */
+    transform: rotate(15deg);
+}
+.bottom-left {
+    bottom: -10px;
+    left: -10px;
+    background-image: url('https://i.imgur.com/example_strawberry_small_left.png'); /* Reemplaza con tu imagen pequeña de fresa */
+    width: 60px;
+    height: 60px;
+    transform: rotate(5deg);
+}
+.bottom-right {
+    bottom: -10px;
+    right: -10px;
+    background-image: url('https://i.imgur.com/example_strawberry_small_right.png'); /* Reemplaza con tu imagen pequeña de fresa */
+    width: 60px;
+    height: 60px;
+    transform: rotate(-5deg);
+}
+
+
+/* --- SECCIÓN DE ENCABEZADO --- */
+.header-section {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    width: 160px; /* Tamaño del logo de Strawberry Shortcake */
+    margin-bottom: 15px;
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.1));
+}
+
+.subtitle {
+    font-family: 'Pacifico', cursive; /* O 'Great Vibes' */
+    color: #f06292; /* Rosa más suave */
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    color: #e91e63; /* Rosa frambuesa principal */
+    font-size: 4.5rem; /* Tamaño grande para el nombre */
+    line-height: 1;
+    text-shadow: 3px 3px 5px rgba(255, 182, 193, 0.7); /* Sombra para el nombre */
+    margin-bottom: 10px;
+    animation: popIn 0.8s ease-out;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    80% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.tagline {
+    font-family: 'Quicksand', sans-serif;
+    color: #888;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-top: 5px;
+    padding: 5px 15px;
+    background-color: #ffedf0;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* --- SECCIÓN DE FOTO DEL BEBÉ --- */
+.photo-section {
+    text-align: center;
+    margin-bottom: 35px;
+    position: relative;
+    z-index: 1;
+}
+
+.baby-photo {
+    width: 180px; /* Tamaño de la foto */
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%; /* Foto redonda */
+    border: 5px solid #ffcbd4; /* Borde rosa alrededor */
+    box-shadow: 0 8px 20px rgba(230, 80, 110, 0.2);
+    animation: rotateIn 1s ease-out;
+}
+
+@keyframes rotateIn {
+    from { transform: scale(0.5) rotate(-90deg); opacity: 0; }
+    to { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* --- SECCIÓN DE DETALLES DEL EVENTO --- */
+.details-section {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    background-color: #fffbfd;
+    padding: 25px 15px;
+    border-radius: 20px;
+    border: 1px dashed #ffdee4;
+    box-shadow: inset 0 0 10px rgba(255, 192, 203, 0.1);
+}
+
+.invitation-text {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.event-info {
+    display: flex;
+    flex-direction: column; /* Apila los elementos en móvil */
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    font-size: 1.1rem;
+    color: #e91e63; /* Color principal de fresa */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #f06292; /* Iconos un poco más claros */
+}
+
+/* --- SECCIÓN DEL CONTADOR REGRESIVO --- */
+.countdown-section {
+    margin-top: 30px;
+}
+
+.countdown-section h3 {
+    font-family: 'Pacifico', cursive;
+    color: #f06292;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Para que se adapte a pantallas pequeñas */
+}
+
+.time-box {
+    background-color: #ffedf0;
+    border: 2px solid #ffccd5;
+    border-radius: 15px;
+    padding: 10px 15px;
+    text-align: center;
+    min-width: 80px; /* Ancho mínimo para cada caja */
+    box-shadow: 0 4px 10px rgba(255, 192, 203, 0.3);
+}
+
+.time-box span {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #e91e63;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+.time-box:nth-child(even) { /* Color alternado para un toque divertido */
+    background-color: #ffe0e4;
+}
+
+/* --- SECCIÓN DE UBICACIÓN --- */
+.location-section {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.location-section h3 {
+    font-family: 'Pacifico', cursive;
+    color: #f06292;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.address {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 25px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column; /* Apila los botones en móvil */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.action-btn {
+    display: inline-flex; /* Para centrar el texto y el icono */
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    gap: 10px; /* Espacio entre icono y texto */
+}
+
+.map-btn {
+    background: linear-gradient(45deg, #f88c9d, #f5a0ac); /* Degradado de rosa */
+    color: white;
+    border: 2px solid #f8d0d5;
+}
+
+.map-btn:hover {
+    background: linear-gradient(45deg, #f57e90, #f2909f);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+}
+
+.confirm-btn {
+    background: linear-gradient(45deg, #a7e08e, #c6f0b8); /* Degradado de verde pastel */
+    color: #5b8a5b; /* Texto verde oscuro */
+    border: 2px solid #d0f0c9;
+}
+
+.confirm-btn:hover {
+    background: linear-gradient(45deg, #9acb83, #b8e0a7);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(167, 224, 142, 0.4);
+}
+
+.action-btn i {
+    font-size: 1.2rem;
+}
+
+/* --- SECCIÓN FINAL --- */
+.footer-section {
+    text-align: center;
+    margin-top: 40px;
+    position: relative;
+    padding-top: 20px;
+    border-top: 1px dashed #ffdee4;
+    z-index: 1;
+}
+
+.final-message {
+    font-family: 'Pacifico', cursive;
+    color: #e91e63;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+}
+
+.strawberry-characters {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end; /* Alinea los personajes a la base */
+    margin-top: 20px;
+}
+
+.strawberry-characters img {
+    width: 100px; /* Tamaño de los personajes */
+    height: auto;
+    filter: drop-shadow(3px 3px 8px rgba(0,0,0,0.15));
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.character-left { animation-delay: 0.2s; } /* Retraso para un efecto de rebote escalonado */
+.character-right { animation-delay: 0.5s; }
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --- MARCA DE AGUA --- */
+.watermark {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    color: #ffcdd2; /* Color muy claro */
+    opacity: 0.8;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* --- RESPONSIVE DESIGN (Para celulares más pequeños) --- */
+@media (max-width: 480px) {
+    .invitation-container {
+        padding: 25px 15px;
+        border-radius: 25px;
+    }
+
+    .main-title {
+        font-size: 3.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    .baby-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .invitation-text {
+        font-size: 1rem;
+    }
+
+    .event-info, .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .time-box {
+        min-width: 70px;
+        padding: 8px 10px;
+    }
+    .time-box span {
+        font-size: 1.8rem;
+    }
+
+    .action-btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .final-message {
+        font-size: 1.2rem;
+    }
+
+    .strawberry-characters img {
+        width: 80px;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-title {
+        font-size: 3rem;
+    }
+    .countdown-timer {
+        gap: 5px;
+    }
+    .time-box {
+        min-width: 60px;
+        font-size: 0.8rem;
+    }
+    .time-box span {
+        font-size: 1.6rem;
+    }
+}
+
+
+
+
+
+
+
