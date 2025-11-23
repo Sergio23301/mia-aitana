@@ -42,12 +42,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (confirmBtn) {
         confirmBtn.addEventListener('click', function(e) {
             e.preventDefault(); // Evita que el enlace recargue la página
-            alert('¡Gracias por confirmar! Pronto te contactaremos con más detalles.');
+            
             // Aquí podrías redirigir a un formulario de Google Forms, WhatsApp, etc.
             // window.location.href = "https://forms.gle/tu_formulario";
         });
     }
 });
+
 
 
 
