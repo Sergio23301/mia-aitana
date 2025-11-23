@@ -38,16 +38,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1000); // Actualiza cada segundo
 
     // Manejo del botón de Confirmar Asistencia (ejemplo simple)
-    const confirmBtn = document.querySelector('.confirm-btn');
-    if (confirmBtn) {
-        confirmBtn.addEventListener('click', function(e) {
-            e.preventDefault(); // Evita que el enlace recargue la página
+   // const confirmBtn = document.querySelector('.confirm-btn');
+   // if (confirmBtn) {
+      //  confirmBtn.addEventListener('click', function(e) {
+        //    e.preventDefault(); // Evita que el enlace recargue la página
             
             // Aquí podrías redirigir a un formulario de Google Forms, WhatsApp, etc.
             // window.location.href = "https://forms.gle/tu_formulario";
-        });
-    }
+      //  });
+ //   }
 });
+
 
 
 
