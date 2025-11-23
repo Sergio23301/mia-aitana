@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Fecha del evento: 29 de Septiembre de 2024 a las 5:00 PM
-    const eventDate = new Date('December 5, 2024 17:00:00').getTime();
+    const eventDate = new Date('December 5, 2025 17:00:00').getTime();
 
     const countdown = setInterval(function() {
         const now = new Date().getTime();
@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 
 
 
